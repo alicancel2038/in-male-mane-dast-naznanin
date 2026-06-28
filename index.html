@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Money Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="background"></div>
+
+<div id="toast"></div>
+
+<header>
+
+
+    <h1>💰 مدیریت مالی</h1>
+
+</header>
+
+<div class="container">
+
+    <section class="setup-card">
+
+        <h2>تنظیمات اولیه</h2>
+
+        <div class="input-group">
+
+            <label>بودجه کل</label>
+
+            <input type="number" id="budgetInput" placeholder="مثلاً 500">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>خرج مجاز روزانه</label>
+
+            <input type="number" id="dailyLimitInput" placeholder="مثلاً 10">
+
+        </div>
+
+        <button id="saveSetup">
+            ذخیره اطلاعات
+        </button>
+
+    </section>
+
+
+    <section class="status-card">
+
+        <div class="status-title">
+
+            اطلاعات ذخیره شده
+
+            <div id="resetInfo" class="reset-info">
+    زمان ریست شدن سقف روزانه: <span id="resetTime"></span>
+</div>
+
+        </div>
+
+        <div class="status-info">
+
+            <div>
+
+                بودجه کل
+
+                <span id="budgetValue">
+                    0 تومان
+                </span>
+
+            </div>
+
+            <div>
+
+                خرج روزانه
+
+                <span id="dailyValue">
+                    0 تومان
+                </span>
+
+            </div>
+
+            <div>
+
+خرج امروز
+
+<span id="todaySpent">
+
+0 تومان
+
+</span>
+
+</div>
+
+        </div>
+
+    </section>
+
+    <section class="dashboard">
+
+        <div class="box spend">
+
+            <h3>
+
+                خرج کردن
+
+            </h3>
+
+            <input type="number" id="expenseInput" placeholder="مبلغ">
+
+            <button id="addExpense">
+
+                ثبت خرج
+
+            </button>
+
+        </div>
+
+        <div class="box extra">
+
+            <h3>
+
+                مبلغ اضافی
+
+            </h3>
+
+            <span id="extraMoney">
+
+                0
+
+            </span>
+
+            <div class="extra-input-box">
+
+    <input type="number" id="extraInput" placeholder="افزودن مبلغ">
+
+    <button id="addExtraBtn">
+        +
+    </button>
+
+</div>
+
+        </div>
+
+        <div class="box remain">
+
+            <h3>
+
+                مانده
+
+            </h3>
+
+            <span id="remainingMoney">
+
+                0
+
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <section class="progress-section">
+
+        <h2>
+
+            میزان مصرف بودجه
+
+        </h2>
+
+        <div class="progress">
+
+            <div id="progressBar">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="history">
+
+        <div class="history-header">
+
+            <h2>
+
+                تاریخچه خرج‌ها
+
+            </h2>
+
+            <button id="clearHistory">
+
+                حذف همه
+
+            </button>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+
+                        تاریخ
+
+                    </th>
+
+                    <th>
+
+                        مبلغ
+
+                    </th>
+
+                    <th>
+
+                        حذف
+
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="historyBody">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <section class="tools">
+
+        <button id="exportPDF">
+
+            خروجی PDF
+
+        </button>
+
+        <button id="exportExcel">
+
+            خروجی Excel
+
+        </button>
+
+        <button id="resetAll">
+
+            ریست کامل
+
+        </button>
+
+    </section>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/date.js"></script>
+
+<script src="js/budget.js"></script>
+<script src="js/history.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/export.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
