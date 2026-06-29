@@ -35,13 +35,17 @@ function initializeBudget() {
 
 function loadTodayData() {
 
-    todayLimit = Number(localStorage.getItem("today_limit")) || app.dailyLimit;
+    const savedLimit = localStorage.getItem("today_limit");
+    todayLimit = savedLimit !== null ? Number(savedLimit) : app.dailyLimit;
 
-    todaySpentAmount = Number(localStorage.getItem("today_spent")) || 0;
+    const savedExtra = localStorage.getItem("extra_balance");
+    extraBalance = savedExtra !== null ? Number(savedExtra) : 0;
 
-    carryDebt = Number(localStorage.getItem("carry_debt")) || 0;
+    const savedDebt = localStorage.getItem("carry_debt");
+    carryDebt = savedDebt !== null ? Number(savedDebt) : 0;
 
-    extraBalance = Number(localStorage.getItem("extra_balance")) || 0;
+    const savedSpent = localStorage.getItem("today_spent");
+    todaySpentAmount = savedSpent !== null ? Number(savedSpent) : 0;
 
 }
 
